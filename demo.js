@@ -40,11 +40,11 @@
     }
     step += direction
     
+     var c = 0.5 - Math.cos(step / MAX_STEPS *  3.14159265  ) / 2
     for(var x = 0; x < width; x ++) {
        for(var y = 0; y < height; y ++) {
          var color1 = getPixel(imageData2, x, y)
          var color2 = getPixel(imageData1, x, y)
-         var c = step / MAX_STEPS
 
          var color = {}
            color.r = color1.r * c + color2.r * (1- c)
@@ -113,8 +113,7 @@ function animateExplode(canvas, image1, image2) {
     }
     step += direction
 
-     var c = 1 - Math.cos(step / MAX_STEPS * 3.14159265 / 2)
-
+     var c = 0.5 - Math.cos(step / MAX_STEPS *  3.14159265  ) / 2
     
     for(var x = 0; x < width; x ++) {
        for(var y = 0; y < height; y ++) {
